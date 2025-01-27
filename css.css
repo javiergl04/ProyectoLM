@@ -2,4 +2,34 @@
 {
     border-style: solid;
     border-width: 5px;
+    width: 1440px;
+    height: 700px;
+}
+
+#osu
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#menu
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#botones
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-top: 40px;
+    gap: 15px;
+}
+
+#jugar
+{
+    display: flex;
 }

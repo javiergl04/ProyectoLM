@@ -15,11 +15,13 @@ var puntuacionMuerte = 0;
 // Código
 
 function Muerte(){
-    
     if(puntuacionMuerte => 5){
         puntuacion = 0;
         death_counter + 1;
-        
     }
 }
+
+
+
+
 
