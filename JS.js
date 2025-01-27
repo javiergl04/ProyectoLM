@@ -4,17 +4,24 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var jugar = document.getElementById("jugar");
 var botonfacil = document.getElementById("dificultad1")
-var botonnormal = document.getElementById("dificultad1")
-var botondificil = document.getElementById("dificultad1")
-var botonfacil = document.getElementById("dificultad1")
+var botonnormal = document.getElementById("dificultad2")
+var botondificil = document.getElementById("dificultad3")
+var botonpesadilla = document.getElementById("dificultad4")
+
+var circulo = {
+
+    x: 0,
+    y: 0,
+    radio: 50
+};
 
 // Variables juego
 
 var temp = 3;
 var tamanyo = 50;
-var death_counter = 0;
-var puntuacion = 0;
-var puntuacionMuerte = 0;
+var death_counter;
+var puntuacion;
+var puntuacionMuerte;
 
 
 // Código
@@ -36,6 +43,9 @@ function dibujaCirculo()
     var x = Math.random() * (canvas.clientWidth - 2 * tamanyo) + tamanyo;
     var y = Math.random() * (canvas.clientHeight - 2 * tamanyo) + tamanyo;
 
+    circulo.x = x;
+    circulo.y = y;
+    
     ctx.lineWidth = 2;
     ctx.strokeStyle = "black";
 
@@ -43,11 +53,5 @@ function dibujaCirculo()
     ctx.arc(x, y, tamanyo, 0, 2* Math.PI);
     ctx.stroke();
 }
-
-function intento(jugador)
-{
-
-}
-
 
 
