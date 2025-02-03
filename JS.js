@@ -20,11 +20,12 @@ var circulo = {
 var temp = 3;
 var tamanyo = 50;
 var death_counter;
-var puntuacion;
+var puntuacion = 0;
+var puntuacionElemento = document.getElementById("puntuacion");
 var puntuacionMuerte;
 
 
-// Código
+// Código funciones
 
 function Muerte(){
     if(puntuacionMuerte >= 5){
@@ -54,4 +55,24 @@ function dibujaCirculo()
     ctx.stroke();
 }
 
+canvas.addEventListener('click', detectaClick);
 
+function detectaClick()
+{
+
+    var mouseX = event.offsetX;
+    var mouseY = event.offsetY;
+
+    var distancia = Math.sqrt(Math.pow(mouseX - circulo.x, 2) + Math.pow(mouseY - circulo.y, 2));
+
+    if(distancia <= circulo.radio)
+    {
+        puntuacion++;
+        dibujaCirculo();
+    }
+    else
+    {
+        puntuacionMuerte++;
+    }
+
+}
