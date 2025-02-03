@@ -21,18 +21,18 @@ var temp = 3;
 var tamanyo = 50;
 var death_counter;
 var puntuacion = 0;
-var puntuacionElemento = document.getElementById("puntuacion");
-var puntuacionMuerte;
+var puntuacionMuerte = 0;
 
 
 // Código funciones
 
-function Muerte(){
-    if(puntuacionMuerte >= 5){
-        puntuacion = 0;
-        death_counter++;
-        console.log("H A S   M U E R TO");
-    }
+function Muerte()
+{
+    puntuacion = 0;
+    puntuacionMuerte = 0;
+    death_counter++;
+    console.log("H A S   M U E R TO");
+    dejarDibujar();
 }
 
 jugar.addEventListener('click', dibujaCirculo);
@@ -72,7 +72,18 @@ function detectaClick()
     }
     else
     {
+        
         puntuacionMuerte++;
+        
+        if(puntuacionMuerte > 5)
+        {
+            Muerte();
+        }
+
     }
 
+}
+
+function dejarDibujar(){
+    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 }

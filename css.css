@@ -1,9 +1,15 @@
+body
+{
+    background: linear-gradient(to right, #65018a, #c302e0);
+}
+
 #canvas
 {
     border-style: solid;
     border-width: 5px;
     width: 1440px;
     height: 700px;
+    background: white;
 }
 
 #osu
@@ -67,4 +73,17 @@
     font-weight: bold;
     margin: 0 auto;
     margin-top: 15px;
+}
+
+#puntuacion
+{
+    
+    color: white;
+    display: flex;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 50px;
 }
