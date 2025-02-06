@@ -17,12 +17,34 @@ var circulo = {
 
 // Variables juego
 
-var temp = setInterval(temporizador, 1000);
+var temp;
 var tamanyo = 50;
 var death_counter;
 var puntuacion = 0;
 var puntuacionMuerte = 0;
 
+var dificultad = 1000;
+
+
+botonfacil.addEventListener('click', function(){
+    dificultad = 1000;
+    tamanyo = 70;
+})
+
+botonnormal.addEventListener('click', function(){
+    dificultad = 700;
+    tamanyo = 50;
+})
+
+botondificil.addEventListener('click', function(){
+    dificultad = 300;
+    tamanyo = 30;
+})
+
+botonpesadilla.addEventListener('click', function(){
+    dificultad = 180;
+    tamanyo = 20;
+})
 
 // Código funciones
 
@@ -44,7 +66,12 @@ function dibujaCirculo()
 
     clearInterval(temp);
     contador = 0;
-    temp = setInterval(temporizador, 1000);
+
+    temp = setInterval(temporizador, dificultad);
+
+    // Canvas
+
+    circulo.radio = tamanyo;
 
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 
@@ -102,6 +129,7 @@ function temporizador()
     if(contador >= 3)
     {
         clearInterval(temp);
+        circulo.radio = 0;
         Muerte();
     }
 }

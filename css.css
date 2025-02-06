@@ -1,6 +1,7 @@
 body
 {
-    background: linear-gradient(to right, #65018a, #c302e0);
+    background: repeating-linear-gradient(0deg, #222 0px, #222 10px, #333 10px, #333 20px),
+                repeating-linear-gradient(90deg, #222 0px, #222 10px, #333 10px, #333 20px);
 }
 
 #canvas
@@ -37,26 +38,34 @@ body
 }
 
 #dificultad1{
-    background-color: #91f743;
-    border: none;
+    background-color: #038308;
+    border: solid;
+    color: white;
+    border-color: white;
     border-radius: 10px;
 }
 
 #dificultad2{
     background-color: #2d99f7;
-    border: none;
+    border: solid;
+    color: white;
+    border-color: white;
     border-radius: 10px;
 }
 
 #dificultad3{
     background-color: #9a04bf;
-    border: none;
+    border: solid;
+    color: white;
+    border-color: white;
     border-radius: 10px;
 }
 
 #dificultad4{
     background-color: #750514;
-    border: none;
+    color: white;
+    border: solid;
+    border-color: white;
     border-radius: 10px;
 }
 
@@ -68,7 +77,7 @@ body
     background-color: crimson;
     color: white;
     border: solid;
-    border-color: black;
+    border-color: white;
     border-radius: 10px;
     font-weight: bold;
     margin: 0 auto;
