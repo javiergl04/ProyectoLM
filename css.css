@@ -25,6 +25,8 @@ body
 {
     display: flex;
     flex-direction: row;
+    margin: 10px;
+    
 }
 
 #botones
@@ -96,3 +98,16 @@ body
     justify-content: center;
     margin-left: 50px;
 }
+
+#leyenda
+{
+    border: solid;
+    border-radius: 5px;
+    color: black;
+    border-color: #c7c7c7;
+    background-color: white;
+    margin-left: 150px;
+    width: 300px;
+    
+}
+
