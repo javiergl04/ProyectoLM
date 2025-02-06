@@ -17,7 +17,7 @@ var circulo = {
 
 // Variables juego
 
-var temp = 3;
+var temp = setInterval(temporizador, 1000);
 var tamanyo = 50;
 var death_counter;
 var puntuacion = 0;
@@ -39,6 +39,13 @@ jugar.addEventListener('click', dibujaCirculo);
 
 function dibujaCirculo()
 {
+
+    // Intervalo
+
+    clearInterval(temp);
+    contador = 0;
+    temp = setInterval(temporizador, 1000);
+
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 
     var x = Math.random() * (canvas.clientWidth - 2 * tamanyo) + tamanyo;
@@ -86,4 +93,15 @@ function detectaClick()
 
 function dejarDibujar(){
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+}
+
+function temporizador()
+{
+    contador++;
+
+    if(contador >= 3)
+    {
+        clearInterval(temp);
+        Muerte();
+    }
 }
