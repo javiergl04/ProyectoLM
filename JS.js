@@ -8,6 +8,14 @@ var botonnormal = document.getElementById("dificultad2")
 var botondificil = document.getElementById("dificultad3")
 var botonpesadilla = document.getElementById("dificultad4")
 
+//textos menu
+var puntosText = document.getElementById("puntosText")
+var muertesText = document.getElementById("muerteText")
+var dificultadText = document.getElementById("dificultadText")
+dificultadText.textContent = "Dificultad: Normal";
+puntosText.textContent = "Puntos: 0";
+muertesText.textContent = "Muertes: 0";
+
 var circulo = {
 
     x: 0,
@@ -19,7 +27,7 @@ var circulo = {
 
 var temp;
 var tamanyo = 50;
-var death_counter;
+var death_counter = 0;
 var puntuacion = 0;
 var puntuacionMuerte = 0;
 
@@ -29,22 +37,29 @@ var dificultad = 1000;
 botonfacil.addEventListener('click', function(){
     dificultad = 1000;
     tamanyo = 70;
+    dificultadText.textContent = "Dificultad: Fácil"; 
 })
 
 botonnormal.addEventListener('click', function(){
     dificultad = 700;
     tamanyo = 50;
+    dificultadText.textContent = "Dificultad: Normal";
 })
 
 botondificil.addEventListener('click', function(){
     dificultad = 300;
     tamanyo = 30;
+    dificultadText.textContent = "Dificultad: Dificil";
 })
 
 botonpesadilla.addEventListener('click', function(){
     dificultad = 180;
     tamanyo = 20;
+    dificultadText.textContent = "Dificultad: Pesadilla";
 })
+
+
+
 
 // Código funciones
 
@@ -55,6 +70,8 @@ function Muerte()
     death_counter++;
     console.log("H A S   M U E R TO");
     dejarDibujar();
+    muertesText.textContent = "Muertes: " +death_counter;
+    puntosText.textContent = "Puntos: 0";
 }
 
 jugar.addEventListener('click', dibujaCirculo);
@@ -91,6 +108,8 @@ function dibujaCirculo()
 
 canvas.addEventListener('click', detectaClick);
 
+// Diseño canvas
+
 function detectaClick()
 {
 
@@ -102,6 +121,7 @@ function detectaClick()
     if(distancia <= circulo.radio)
     {
         puntuacion++;
+        puntosText.textContent = "Puntos: " + puntuacion;
         dibujaCirculo();
     }
     else
@@ -111,6 +131,7 @@ function detectaClick()
         
         if(puntuacionMuerte > 5)
         {
+            
             Muerte();
         }
 
@@ -133,3 +154,4 @@ function temporizador()
         Muerte();
     }
 }
+
