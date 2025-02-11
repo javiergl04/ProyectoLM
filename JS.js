@@ -9,6 +9,11 @@ var botondificil = document.getElementById("dificultad3")
 var botonpesadilla = document.getElementById("dificultad4")
 var colorDificultad;
 
+//variables sfx
+var sfx = new Audio('hola.mp3');
+sfx.volume = 0.5;
+sfx.playbackRate = 1.5;
+
 //textos menu
 var puntosText = document.getElementById("puntosText")
 var muertesText = document.getElementById("muerteText")
@@ -169,6 +174,7 @@ function detectaClick()
     {
         puntuacion++;
         puntosText.textContent = "Puntos: " + puntuacion;
+        sfx.play();
         animacionCirculo();
     }
     else
