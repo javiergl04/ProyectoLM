@@ -117,8 +117,41 @@ canvas.addEventListener('click', detectaClick);
 
 // Animaciones
 
-function animacionCirculo(x, y, radio, callback)
+function animacionCirculo()
 {
+
+    function animar()
+    {
+        ctx.clearRect(circulo.x - circulo.radio -2, 
+            circulo.y - circulo.radio - 2, circulo.radio * 2 + 4, 
+            circulo.radio * 2 + 4);
+
+        if(circulo.radio > 0)
+        {
+            circulo.radio -= 1;
+
+            ctx.fillStyle = colorDificultad;
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 2;
+
+            ctx.beginPath();
+            ctx.arc(circulo.x, circulo.y, circulo.radio, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            requestAnimationFrame(animar);
+
+        }
+        else
+        {
+            circulo.radio = tamanyo;
+            dibujaCirculo();
+        }
+
+    }
+
+    animar();
+
 
 }
 
@@ -137,7 +170,6 @@ function detectaClick()
         puntuacion++;
         puntosText.textContent = "Puntos: " + puntuacion;
         animacionCirculo();
-        dibujaCirculo();
     }
     else
     {
