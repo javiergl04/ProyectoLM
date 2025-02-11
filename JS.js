@@ -7,6 +7,7 @@ var botonfacil = document.getElementById("dificultad1")
 var botonnormal = document.getElementById("dificultad2")
 var botondificil = document.getElementById("dificultad3")
 var botonpesadilla = document.getElementById("dificultad4")
+var colorDificultad;
 
 //textos menu
 var puntosText = document.getElementById("puntosText")
@@ -38,24 +39,28 @@ botonfacil.addEventListener('click', function(){
     dificultad = 1000;
     tamanyo = 70;
     dificultadText.textContent = "Dificultad: Fácil"; 
+    colorDificultad = "cyan";
 })
 
 botonnormal.addEventListener('click', function(){
     dificultad = 700;
     tamanyo = 50;
     dificultadText.textContent = "Dificultad: Normal";
+    colorDificultad = "lightgreen";
 })
 
 botondificil.addEventListener('click', function(){
     dificultad = 300;
     tamanyo = 30;
     dificultadText.textContent = "Dificultad: Dificil";
+    colorDificultad = "red";
 })
 
 botonpesadilla.addEventListener('click', function(){
     dificultad = 180;
     tamanyo = 20;
     dificultadText.textContent = "Dificultad: Pesadilla";
+    colorDificultad = "black";
 })
 
 
@@ -100,13 +105,22 @@ function dibujaCirculo()
     
     ctx.lineWidth = 2;
     ctx.strokeStyle = "black";
+    ctx.fillStyle = colorDificultad;
 
     ctx.beginPath();
     ctx.arc(x, y, tamanyo, 0, 2* Math.PI);
+    ctx.fill();
     ctx.stroke();
 }
 
 canvas.addEventListener('click', detectaClick);
+
+// Animaciones
+
+function animacionCirculo(x, y, radio, callback)
+{
+
+}
 
 // Diseño canvas
 
@@ -122,6 +136,7 @@ function detectaClick()
     {
         puntuacion++;
         puntosText.textContent = "Puntos: " + puntuacion;
+        animacionCirculo();
         dibujaCirculo();
     }
     else
@@ -131,7 +146,6 @@ function detectaClick()
         
         if(puntuacionMuerte > 5)
         {
-            
             Muerte();
         }
 
