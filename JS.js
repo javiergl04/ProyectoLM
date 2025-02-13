@@ -45,6 +45,7 @@ botonfacil.addEventListener('click', function(){
     tamanyo = 70;
     dificultadText.textContent = "Dificultad: Fácil"; 
     colorDificultad = "cyan";
+    sfx.playbackRate = 0.5;
 })
 
 botonnormal.addEventListener('click', function(){
@@ -52,6 +53,7 @@ botonnormal.addEventListener('click', function(){
     tamanyo = 50;
     dificultadText.textContent = "Dificultad: Normal";
     colorDificultad = "lightgreen";
+    sfx.playbackRate = 1.7;
 })
 
 botondificil.addEventListener('click', function(){
@@ -188,6 +190,8 @@ function detectaClick()
         }
 
     }
+
+    
 
 }
 
