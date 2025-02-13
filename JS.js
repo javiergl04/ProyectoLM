@@ -10,9 +10,12 @@ var botonpesadilla = document.getElementById("dificultad4")
 var colorDificultad;
 
 //variables sfx
-var sfx = new Audio('hola.mp3');
+var sfx = new Audio('kick.mp3');
 sfx.volume = 0.5;
 sfx.playbackRate = 1.5;
+
+var ambientsfx = new Audio('ambient.mp3');
+sfx.volume = 0.5;
 
 //textos menu
 var puntosText = document.getElementById("puntosText")
@@ -57,23 +60,27 @@ botonnormal.addEventListener('click', function(){
 })
 
 botondificil.addEventListener('click', function(){
-    dificultad = 300;
-    tamanyo = 30;
+    dificultad = 400;
+    tamanyo = 35;
     dificultadText.textContent = "Dificultad: Dificil";
     colorDificultad = "red";
+    sfx.playbackRate = 2.3;
 })
 
 botonpesadilla.addEventListener('click', function(){
-    dificultad = 180;
+    dificultad = 300;
     tamanyo = 20;
     dificultadText.textContent = "Dificultad: Pesadilla";
-    colorDificultad = "black";
+    colorDificultad = "purple";
+    sfx.playbackRate = 2.7;
 })
 
 
 
 
 // Código funciones
+
+ambientsfx.play();
 
 function Muerte()
 {
