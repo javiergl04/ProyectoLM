@@ -16,6 +16,7 @@ sfx.playbackRate = 1.5;
 
 var ambientsfx = new Audio('ambiente.mp3');
 ambientsfx.volume = 0.2;
+ambientsfx.loop = true;
 
 //textos menu
 var puntosText = document.getElementById("puntosText")
@@ -95,8 +96,10 @@ function Muerte()
     muertesText.textContent = "Muertes: " +death_counter;
     puntosText.textContent = "Puntos: 0";
     
-    ctx.fillText("H A S   M U E R T O", canvas.width / 2, canvas.height / 2);
+    ctx.fillStyle = "Red";
     ctx.font = "bold 25px";
+    ctx.fillText("H A S   M U E R T O", canvas.width / 2, canvas.height / 2);
+    
 }
 
 jugar.addEventListener('click', dibujaCirculo);
