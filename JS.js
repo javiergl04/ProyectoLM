@@ -94,10 +94,15 @@ function Muerte()
     dejarDibujar();
     muertesText.textContent = "Muertes: " +death_counter;
     puntosText.textContent = "Puntos: 0";
+    
+    ctx.fillText("H A S   M U E R T O", canvas.width / 2, canvas.height / 2);
+    ctx.font = "bold 25px";
 }
 
 jugar.addEventListener('click', dibujaCirculo);
-
+jugar.addEventListener('click', function(){
+    ambientsfx.volume = 0.1;
+})
 function dibujaCirculo()
 {
 
