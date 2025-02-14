@@ -44,7 +44,7 @@ var dificultad = 1000;
 
 
 botonfacil.addEventListener('click', function(){
-    dificultad = 1000;
+    dificultad = 1300;
     tamanyo = 70;
     dificultadText.textContent = "Dificultad: Fácil"; 
     colorDificultad = "cyan";
@@ -52,7 +52,7 @@ botonfacil.addEventListener('click', function(){
 })
 
 botonnormal.addEventListener('click', function(){
-    dificultad = 700;
+    dificultad = 1000;
     tamanyo = 50;
     dificultadText.textContent = "Dificultad: Normal";
     colorDificultad = "lightgreen";
@@ -60,7 +60,7 @@ botonnormal.addEventListener('click', function(){
 })
 
 botondificil.addEventListener('click', function(){
-    dificultad = 400;
+    dificultad = 700;
     tamanyo = 35;
     dificultadText.textContent = "Dificultad: Dificil";
     colorDificultad = "red";
@@ -68,7 +68,7 @@ botondificil.addEventListener('click', function(){
 })
 
 botonpesadilla.addEventListener('click', function(){
-    dificultad = 300;
+    dificultad = 500;
     tamanyo = 20;
     dificultadText.textContent = "Dificultad: Pesadilla";
     colorDificultad = "purple";
