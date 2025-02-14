@@ -2,7 +2,16 @@ body
 {
     background: repeating-linear-gradient(0deg, #222 0px, #222 10px, #333 10px, #333 20px),
                 repeating-linear-gradient(90deg, #222 0px, #222 10px, #333 10px, #333 20px);
+    animation: desplazarFondo 5s linear infinite;
 }
+
+@keyframes desplazarFondo
+{
+    from {background-position: 0 0;}
+    to { background-position: 100px 100px;}
+} 
+    
+
 
 #canvas
 {

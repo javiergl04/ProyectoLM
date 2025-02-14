@@ -14,8 +14,8 @@ var sfx = new Audio('kick.mp3');
 sfx.volume = 0.5;
 sfx.playbackRate = 1.5;
 
-var ambientsfx = new Audio('ambient.mp3');
-sfx.volume = 0.5;
+var ambientsfx = new Audio('ambiente.mp3');
+ambientsfx.volume = 0.2;
 
 //textos menu
 var puntosText = document.getElementById("puntosText")
@@ -79,8 +79,11 @@ botonpesadilla.addEventListener('click', function(){
 
 
 // Código funciones
+function Autoplay()
+{
+    ambientsfx.play();
+}
 
-ambientsfx.play();
 
 function Muerte()
 {
@@ -97,6 +100,7 @@ jugar.addEventListener('click', dibujaCirculo);
 
 function dibujaCirculo()
 {
+
 
     // Intervalo
 
