@@ -11,7 +11,7 @@ var colorDificultad;
 
 //variables sfx
 var sfx = new Audio('kick.mp3');
-sfx.volume = 0.5;
+sfx.volume = 0.6;
 sfx.playbackRate = 1.5;
 
 var ambientsfx = new Audio('ambiente.mp3');
@@ -106,6 +106,7 @@ jugar.addEventListener('click', dibujaCirculo);
 jugar.addEventListener('click', function(){
     ambientsfx.volume = 0.1;
 })
+
 function dibujaCirculo()
 {
 
